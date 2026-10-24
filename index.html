@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WOD</title>
+<meta name="theme-color" content="#0b0c0f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="WOD">
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0c0f;color:#f3f4f6;font-family:system-ui,-apple-system,sans-serif;text-align:center}
+  img{width:96px;height:96px;border-radius:22px}
+  a{display:inline-block;margin-top:20px;padding:14px 22px;border-radius:14px;background:linear-gradient(135deg,#f26b1d,#f5b041);color:#fff;font-weight:700;text-decoration:none}
+  p{color:#8a909b;font-size:14px;max-width:280px;margin:14px auto 0;line-height:1.45}
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-192.png" alt="">
+  <div><a id="go" href="https://claude.ai/artifact/W4kzaCQEosVL1b9CjkYnky">Open WOD Timer</a></div>
+  <p id="tip">Tik op Delen → "Zet op beginscherm" om dit als app te bewaren.</p>
+</main>
+<script>
+  // Na installatie direct doorsturen; bij eerste bezoek de installatie-uitleg tonen.
+  var seen=false;try{seen=localStorage.getItem('wod-seen')==='1';localStorage.setItem('wod-seen','1');}catch(e){}
+  if(seen||new URLSearchParams(location.search).has('go'))location.replace(document.getElementById('go').href);
+</script>
+</body>
+</html>
